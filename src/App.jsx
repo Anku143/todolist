@@ -1,10 +1,13 @@
 import './App.css'
+import Todo from './Components/Todo'
 
 function App() {
 
   return (
     <>
-      <h1 className=''>Todo List</h1>
+      <div className="bg-stone-800 grid place-items-center p-4 h-screen">
+        <Todo />
+      </div>
     </>
   )
 }

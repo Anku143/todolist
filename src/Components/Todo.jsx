@@ -13,16 +13,20 @@ const Todo = () => {
         if (inputText === '') {
             return null;
         }
-        else {
-            const newTodo = {
-                id: Date.now(),
-                text: inputText,
-                iscompleted: false,
-            }
-            setTodoList((prev) => [...prev, newTodo])
-            inputRef.current.value = '';
+
+        const newTodo = {
+            id: Date.now(),
+            text: inputText,
+            iscompleted: true,
         }
+        setTodoList((prev) => [...prev, newTodo])
+        inputRef.current.value = '';
     }
+
+    const deleteTodo = (id) => {
+        setTodoList((prevTodo) => { return prevTodo.filter((todo) => todo.id !== id) })
+    }
+
 
 
     return (
@@ -38,8 +42,8 @@ const Todo = () => {
             <div className="bg-stone-700 p-4 rounded-lg mt-4 w-96">
                 <h2 className="text-xl font-bold text-white">Todo</h2>
 
-                {todoList.map((todo, index) => (
-                    <TodoItems key={todo.id} text={todo.text} />
+                {todoList.map((item, index) => (
+                    <TodoItems key={index} text={item.text} id={item.id} isCompleted={item.isCompleted} deleteTodo={deleteTodo} />
                 ))}
 
 

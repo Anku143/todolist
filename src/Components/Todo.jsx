@@ -54,7 +54,7 @@ const Todo = () => {
             </div>
             <div className="bg-stone-700 p-4 rounded-lg mt-4 w-96">
                 <input type="text" ref={inputRef} required className="w-full p-2 rounded-lg focus-visible:outline-transparent bg-white" placeholder="Add a new todo" />
-                <button onClick={add} className="bg-stone-500 text-white p-2 rounded-lg w-full mt-4 cursor-pointer">Add</button>
+                <button type='submit' onClick={add} className="bg-stone-500 text-white p-2 rounded-lg w-full mt-4 cursor-pointer">Add</button>
             </div>
             <div className="bg-stone-700 p-4 rounded-lg mt-4 w-96">
                 <h2 className="text-xl font-bold text-white">Todo</h2>
